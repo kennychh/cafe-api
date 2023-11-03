@@ -38,11 +38,11 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
 })
 
-app.get('/about', (req, res) => {
+app.get('/api/about', (req, res) => {
   res.send('This is my about route..... ')
 })
 
-app.post("/addOrder", async (req, resp) => {
+app.post("/api/addOrder", async (req, resp) => {
   try {
     const newDoc = new OrderModel({
       order: req.body.order,
@@ -56,7 +56,7 @@ app.post("/addOrder", async (req, resp) => {
   }
 });
 
-app.post("/pickupOrder", async (req, resp) => {
+app.post("/api/pickupOrder", async (req, resp) => {
   try {
     const order = await OrderModel.findOne({ customer: req.body.customer });
     if (!order) {
