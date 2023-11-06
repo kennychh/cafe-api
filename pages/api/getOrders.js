@@ -22,7 +22,7 @@ export default async function (req, res) {
         message: "no pickup orders found",
       },});
     } else {
-      res.status(200).json(orders);
+      res.status(200).json(JSON.stringify(orders));
     }
   } catch (e) {
     res.status(400).json({
