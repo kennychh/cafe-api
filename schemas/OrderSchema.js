@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 export const OrderSchema = new mongoose.Schema({
   order: {
     type: String,
